@@ -1,7 +1,7 @@
 # Reconstructed Neural Network Pruning - Polish AI Olympiad I
 
 This repository is a reconstructed reference solution for the Neural Network Pruning task in the Polish Artificial Intelligence Olympiad.
-It is not the author's original competition submission.
+
 
 The task fixed a 128-1024-10 sigmoid regression architecture and rewarded sparsity while penalizing validation MSE.
 The reconstruction identifies the sparse linear structure in the official training targets and encodes it with paired sigmoid units inside the required architecture.
