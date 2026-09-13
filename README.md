@@ -6,6 +6,10 @@ It is not the author's original competition submission.
 The task fixed a 128-1024-10 sigmoid regression architecture and rewarded sparsity while penalizing validation MSE.
 The reference approach uses iterative global magnitude pruning with validation-controlled threshold selection, avoiding architecture changes as required by the task.
 
+![Neural-network pruning illustration](assets/task-pruning.png)
+
+*Task illustration embedded in the official Polish AI Olympiad I notebook.*
+
 ## Quick start
 
 `python -m unittest discover -s tests -v`
