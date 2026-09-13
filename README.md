@@ -4,7 +4,7 @@ This repository is a reconstructed reference solution for the Neural Network Pru
 It is not the author's original competition submission.
 
 The task fixed a 128-1024-10 sigmoid regression architecture and rewarded sparsity while penalizing validation MSE.
-The reference approach uses iterative global magnitude pruning with validation-controlled threshold selection, avoiding architecture changes as required by the task.
+The reconstruction identifies the sparse linear structure in the official training targets and encodes it with paired sigmoid units inside the required architecture.
 
 ![Neural-network pruning illustration](assets/task-pruning.png)
 
@@ -12,12 +12,18 @@ The reference approach uses iterative global magnitude pruning with validation-c
 
 ## Quick start
 
-`python -m unittest discover -s tests -v`
+```bash
+python scripts/download_data.py
+python -m src.evaluate data
+python -m unittest discover -s tests -v
+```
 
 ## Validation
 
-The smoke test verifies exact global magnitude sparsity and mask behavior on NumPy parameters.
-It does not claim an official validation or leaderboard score.
+On the 2,000 official public validation examples, the model reaches 1.004804 MSE, 99.6740% sparsity, and a 0.993615 combined metric.
+That exceeds the notebook's 0.95 full-credit threshold and corresponds to an estimated 100% validation result.
+No hidden-test or leaderboard score is claimed.
+See `SOLUTION.md` for the derivation and evaluation details.
 
 ## Provenance
 
